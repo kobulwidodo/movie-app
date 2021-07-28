@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import Jumbotron from '../Components/Jumbotron/Jumbotron';
+import MovieList from '../Components/MoviesList/MovieList';
 import Navigatebar from '../Components/Navbar/Navigatebar';
 
 const HomePage = () => {
@@ -13,6 +14,7 @@ const HomePage = () => {
                     subtitle="Cari dan temukan lebih dari 1000 film dan series favorit disini."
                 />
             </Container>
+            <MovieList />
         </>
     )
 }
