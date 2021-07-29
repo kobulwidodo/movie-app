@@ -10,8 +10,8 @@ const Navigatebar = () => {
                     <img
                         alt=""
                         src={logo}
-                        width="40"
-                        height="40"
+                        width="35"
+                        height="35"
                         className="d-inline-block align-top"
                     />
                     Movies App
