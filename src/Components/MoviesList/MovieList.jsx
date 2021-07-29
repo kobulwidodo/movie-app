@@ -16,7 +16,7 @@ const MovieList = (props) => {
                     <Col lg={3} sm={6} key={index}>
                         <SkeletonMovie animation="wave" variant="rect" widht="100%" height={300}/>
                     </Col>
-                )) : props.moviesList.slice(0, props.isLimit4 ? 4 : 20).map((movie) => (
+                )) : (props.isLimit4 ? props.moviesList.slice(0, 4).map((movie) => (
                     <Col lg={3} sm={6} key={movie.id}>
                         <CardMovies
                             key={movie.id}
@@ -25,7 +25,16 @@ const MovieList = (props) => {
                             DatePoster={movie.release_date ?? movie.first_air_date}
                         />
                     </Col>
-                ))}
+                )) : props.moviesList.map((movie) => (
+                    <Col lg={3} sm={6} key={movie.id}>
+                        <CardMovies
+                            key={movie.id}
+                            ImagePoster={movie.poster_path}
+                            TitlePoster={movie.title ?? movie.name}
+                            DatePoster={movie.release_date ?? movie.first_air_date}
+                        />
+                    </Col>
+                )) )}
             </Row>
         </>
     )
