@@ -3,9 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const PosterWrap = styled.div`
-    /* max-width: 222px; */
     text-align: center;
-    margin-top: 30px;
     padding: 22px;
 `
 
