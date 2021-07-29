@@ -72,7 +72,7 @@ const HomePage = () => {
                 </Row>
                 <MovieList
                     moviesList={tvList}
-                    isLimit4={false}
+                    isLimit4={true}
                 />
             </Container>
         </>
