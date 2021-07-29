@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import movieapi from '../../api/movieapi'
 import CardMovies from '../CardMovies/CardMovies'
 
-const MovieList = () => {
+const MovieList = (props) => {
     const [moviesList, setMoviesList] = useState([])
     const moviesArray = JSON.stringify(moviesList)
     
@@ -21,8 +21,8 @@ const MovieList = () => {
         <>
             <Container>
                 <Row>
-                    { moviesList.map((movie) => (
-                        <Col lg={3} md={4} sm={6} key={movie.id}>
+                    { props.isLimit4 ? moviesList.slice(0, 4).map((movie) => (
+                        <Col lg={3} sm={6} key={movie.id}>
                             <CardMovies
                                 key={movie.id}
                                 ImagePoster={movie.poster_path}
@@ -30,7 +30,16 @@ const MovieList = () => {
                                 DatePoster={movie.release_date}
                             />
                         </Col>
-                    )) }
+                    )) : moviesList.map((movie) => (
+                        <Col lg={3} sm={6} key={movie.id}>
+                            <CardMovies
+                                key={movie.id}
+                                ImagePoster={movie.poster_path}
+                                TitlePoster={movie.title}
+                                DatePoster={movie.release_date}
+                            />
+                        </Col>
+                    ))}
                 </Row>
             </Container>
         </>
