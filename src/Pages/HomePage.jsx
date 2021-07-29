@@ -7,6 +7,7 @@ import Navigatebar from '../Components/Navbar/Navigatebar';
 import TitleSection from '../Components/TitleSection/TitleSection';
 import ButtonGrey from '../Components/ButtonGrey/ButtonGrey';
 import movieapi from '../api/movieapi';
+import Footer from '../Components/Footer/Footer';
 
 const HomePage = () => {
     const [moviesList, setMoviesList] = useState([])
@@ -81,6 +82,7 @@ const HomePage = () => {
                     loading={loadingT}
                 />
             </Container>
+            <Footer />
         </>
     )
 }
