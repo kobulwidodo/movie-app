@@ -13,11 +13,15 @@ git clone https://github.com/kobulwidodo/movie-app.git
 ```bash
 cd movie-app
 ```
-3. Install All Dependencies
+3. Rename .env.example file to .env and Fill your [MovieDB API Key](https://www.themoviedb.org/settings/api)
+```env
+REACT_APP_MOVIEDB_API_KEY=<your-api-key>
+```
+5. Install All Dependencies
 ```bash
 npm install
 ```
-4. Run The App
+5. Run The App
 ```bash
 npm run start
 ```
