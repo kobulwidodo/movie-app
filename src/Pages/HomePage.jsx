@@ -13,6 +13,8 @@ const HomePage = () => {
     const moviesArray = JSON.stringify(moviesList)
     const [tvList, setTvList] = useState([])
     const tvArray = JSON.stringify(tvList)
+    const [loadingM, setLoadingM] = useState(true)
+    const [loadingT, setLoadingT] = useState(true)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,6 +22,7 @@ const HomePage = () => {
                 params: {},
             })
             setMoviesList(res.data.results)
+            setLoadingM(false)
         }
         fetchData()
     }, [moviesArray])
@@ -30,6 +33,7 @@ const HomePage = () => {
                 params: {},
             })
             setTvList(res.data.results)
+            setLoadingT(false)
         }
         fetchData()
     }, [tvArray])
@@ -58,6 +62,7 @@ const HomePage = () => {
                 <MovieList
                     moviesList={moviesList}
                     isLimit4={true}
+                    loading={loadingM}
                 />
                 <Row className="mt-5">
                     <div className="d-flex justify-content-between">
@@ -73,6 +78,7 @@ const HomePage = () => {
                 <MovieList
                     moviesList={tvList}
                     isLimit4={true}
+                    loading={loadingT}
                 />
             </Container>
         </>
