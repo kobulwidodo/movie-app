@@ -1,4 +1,4 @@
-# Movies App
+# Movies App (On Going Project)
 
 Movies App is a simple Web App that provides Information about movies, tv show, actor, and much more.\
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
