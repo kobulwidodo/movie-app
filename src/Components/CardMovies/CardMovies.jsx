@@ -10,6 +10,10 @@ const PosterWrap = styled.div`
 const ImagePoster = styled.img`
     width: 100%;
     border-radius: 15px;
+    transition: transform .5s ease;
+    &:hover {
+        transform: scale(1.05);
+    }
 `
 
 const TitlePoster = styled.div`
