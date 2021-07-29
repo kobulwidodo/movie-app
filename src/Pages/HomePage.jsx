@@ -1,8 +1,11 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import popcornIcon from '../img/popcorn.svg'
 import Jumbotron from '../Components/Jumbotron/Jumbotron';
 import MovieList from '../Components/MoviesList/MovieList';
 import Navigatebar from '../Components/Navbar/Navigatebar';
+import TitleSection from '../Components/TitleSection/TitleSection';
+import ButtonGrey from '../Components/ButtonGrey/ButtonGrey';
 
 const HomePage = () => {
     return (
@@ -14,7 +17,22 @@ const HomePage = () => {
                     subtitle="Cari dan temukan lebih dari 1000 film dan series favorit disini."
                 />
             </Container>
-            <MovieList />
+            <Container>
+                <Row className="mt-5">
+                    <div className="d-flex justify-content-between">
+                        <TitleSection
+                            img={popcornIcon}
+                            title="Popular Movies"
+                        />
+                        <ButtonGrey 
+                            text='Lihat Semua'
+                        />
+                    </div>
+                </Row>
+            </Container>
+            <MovieList 
+                isLimit4={true}
+            />
         </>
     )
 }
