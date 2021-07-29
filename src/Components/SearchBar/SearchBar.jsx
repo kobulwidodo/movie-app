@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     const classes = useStyles();
     return (
         <>
@@ -44,8 +44,9 @@ const SearchBar = () => {
                     className={classes.input}
                     placeholder="Search movies, tv show, series, people...."
                     inputProps={{ 'aria-label': 'Search movies, tv show, series, people....' }}
+                    onChange={(e) => props.onChange(e.target.value)}
                 />
-                <IconButton type="submit" className={classes.iconButton} aria-label="search">
+                <IconButton type="submit" disabled={true} className={classes.iconButton} aria-label="search">
                     <SearchIcon />
                 </IconButton>
             </Paper>
