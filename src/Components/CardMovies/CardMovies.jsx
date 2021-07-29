@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 
 const PosterWrap = styled.div`
     text-align: center;
-    padding: 22px;
+    padding: 30px;
+    @media screen and (max-width: 633px) {
+        padding-right: 50px;
+        padding-left: 50px
+    }
 `
 
 const ImagePoster = styled.img`
