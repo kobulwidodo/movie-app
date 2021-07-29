@@ -15,7 +15,7 @@ const StyledLink = styled(Link)`
 const ButtonGrey = (props) => {
     return (
         <StyledLink
-            to="#"
+            to={props.link}
             className="btn btn-primary"
         >{props.text}</StyledLink>
     )

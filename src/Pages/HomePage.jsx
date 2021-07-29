@@ -56,6 +56,7 @@ const HomePage = () => {
                             title="Popular Movies"
                         />
                         <ButtonGrey 
+                            link='/movies'
                             text='Lihat Semua'
                         />
                     </div>
