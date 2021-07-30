@@ -17,6 +17,7 @@ const MoviesPage = () => {
         search: ""
     })
     const [loading, setLoading] = useState(true)
+    const [isLoad, setIsLoad] = useState(false)
 
     useEffect(() => {
         const fetchDataDiscover = async () => {
@@ -25,6 +26,7 @@ const MoviesPage = () => {
             const tempArr = res.data.results
             setMoviesList(m => ({ ...m, list: [...m.list, ...tempArr]}))
             setLoading(false)
+            setIsLoad(false)
         }
         const fetchDataSearch = async () => {
             const res = await movieapi.get(`search/movie?query=${moviesList.search}`)
@@ -53,6 +55,14 @@ const MoviesPage = () => {
         }
     }
 
+    const onClickLoad = () => {
+        setIsLoad(true)
+        setMoviesList(mv => ({
+            ...mv,
+            pageNumber: mv.pageNumber + 1
+        }))
+    }
+
     return (
         <>
             <Navigatebar />
@@ -75,17 +85,16 @@ const MoviesPage = () => {
                         loading={loading}
                     />
                 </Row>
-                <Row>
-                    <div 
-                        className="d-flex justify-content-center" 
-                        onClick={() => setMoviesList(mv => ({
-                            ...mv,
-                            pageNumber: mv.pageNumber+1
-                        }))}
-                    >
-                        <ButtonGrey text='Load Lagi' />
-                    </div>
-                </Row>
+                {moviesList.search === "" ? 
+                    <Row>
+                        <div className="d-flex justify-content-center">
+                            <ButtonGrey
+                                text='Load More'
+                                onClick={() => onClickLoad()}
+                                loading={isLoad}
+                            />
+                        </div>
+                    </Row> : null}
             </Container>
             <Footer />
         </>
