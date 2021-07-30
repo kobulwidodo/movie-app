@@ -7,6 +7,9 @@ const FooterWrap = styled.div`
     padding-bottom: 20px;
     text-align: center;
     background-color: #EBEBEB;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
 `
 
 const Text = styled.div`
@@ -14,11 +17,18 @@ const Text = styled.div`
     font-size: 0.875rem;
 `
 
+const FooterGap = styled.div`
+    padding-top: 6rem;
+`
+
 const Footer = () => {
     return (
-        <FooterWrap>
-            <Text>Create with Love by KobuL</Text>
-        </FooterWrap>
+        <>
+            <FooterGap />
+            <FooterWrap>
+                <Text>Create with Love by KobuL</Text>
+            </FooterWrap>
+        </>
     )
 }
 
