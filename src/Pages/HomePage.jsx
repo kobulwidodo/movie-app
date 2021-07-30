@@ -73,6 +73,7 @@ const HomePage = () => {
                             title="Popular TV Shows"
                         />
                         <ButtonGrey
+                            link='/tv-shows'
                             text='Lihat Semua'
                         />
                     </div>
