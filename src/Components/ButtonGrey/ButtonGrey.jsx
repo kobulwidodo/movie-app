@@ -4,10 +4,10 @@ import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
     background: #EDEDED;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    border-color: unset;
-    border: unset;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 5px !important;
+    border-color: unset !important;
+    border: unset !important;
     color: #5F5F5F;
     font-weight: 500;
 `
@@ -15,9 +15,10 @@ const StyledLink = styled(Link)`
 const ButtonGrey = (props) => {
     return (
         <StyledLink
+            onClick={props.onClick !== undefined ? () => props.onClick() : (e) => e.stopPropagation()}
             to={props.link}
-            className="btn btn-primary"
-        >{props.text}</StyledLink>
+            className={props.loading ? 'btn disabled-link' : 'btn'}
+        >{props.loading ? 'Loading..' : props.text }</StyledLink>
     )
 }
 
