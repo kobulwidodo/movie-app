@@ -20,6 +20,7 @@ const MovieList = (props) => {
                     <Col lg={3} sm={6} key={movie.id}>
                         <CardMovies
                             key={movie.id}
+                            id={movie.id}
                             ImagePoster={movie.poster_path}
                             TitlePoster={movie.title ?? movie.name}
                             DatePoster={movie.release_date ?? movie.first_air_date}
@@ -29,6 +30,7 @@ const MovieList = (props) => {
                     <Col lg={3} sm={6} key={movie.id}>
                         <CardMovies
                             key={movie.id}
+                            id={movie.id}
                             ImagePoster={movie.poster_path}
                             TitlePoster={movie.title ?? movie.name}
                             DatePoster={movie.release_date ?? movie.first_air_date}
