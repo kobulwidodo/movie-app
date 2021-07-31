@@ -37,7 +37,7 @@ const DatePoster = styled.div`
 const CardMovies = (props) => {
     return (
         <PosterWrap>
-            <Link to="#" style={{ textDecoration: 'none' }}>
+            <Link to={`/movie/${props.id}`} style={{ textDecoration: 'none' }}>
                 <ImagePoster src={"http://image.tmdb.org/t/p/w342/" + props.ImagePoster} />
                 <TitlePoster>{props.TitlePoster}</TitlePoster>
                 <DatePoster>{props.DatePoster}</DatePoster>
