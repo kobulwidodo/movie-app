@@ -17,7 +17,7 @@ function App() {
             <Route path="/" exact component={HomePage} />
             <Route path="/movies" exact component={MoviesPage} />
             <Route path="/tv-shows" exact component={TvShowsPage} />
-            <Route path="/movie/:id" exact component={MovieDetailPage} />
+            <Route path="/:type/:id" exact component={MovieDetailPage} />
         </Switch>
     </Router>
   );
