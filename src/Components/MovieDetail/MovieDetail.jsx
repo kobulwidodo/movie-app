@@ -92,15 +92,15 @@ const MovieDetail = (props) => {
                     <div className="col-12" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'start', gap: '1rem' }}>
                         <div className="d-block me-5">
                             <ItemTitle>Released Date</ItemTitle>
-                            <ItemSubtitle>{props.loading ? <Skeleton variant="text" /> : props.date}</ItemSubtitle>
+                            <ItemSubtitle>{props.loading ? <Skeleton variant="text" /> : (props.date.includes("-") ? props.date : 'Coming Soon')}</ItemSubtitle>
                         </div>
                         <div className="d-block me-5">
                             <ItemTitle>Rating</ItemTitle>
-                            <ItemSubtitle>{props.loading ? <Skeleton variant="text" /> : (props.rating + ' / 10')}</ItemSubtitle>
+                            <ItemSubtitle>{props.loading ? <Skeleton variant="text" /> : ((props.rating === 0 ? 'NaN' : props.rating) + ' / 10')}</ItemSubtitle>
                         </div>
                         <div className="d-block me-5">
-                            <ItemTitle>Director</ItemTitle>
-                            <ItemSubtitle>{props.loading ? <Skeleton variant="text" /> : props.director.map((n, idx, arr) => arr.length - 1 === idx ? n.original_name : n.original_name + ', ')}</ItemSubtitle>
+                            <ItemTitle>{props.isMovie ? 'Director' : 'Episode Count'}</ItemTitle>
+                            <ItemSubtitle>{props.loading ? <Skeleton variant="text" /> : (props.isMovie ? (props.director.map((n, idx, arr) => arr.length - 1 === idx ? n.original_name : n.original_name + ', ')) : props.episodeCount + ' Episode')}</ItemSubtitle>
                         </div>
                     </div>
                 </Col>
