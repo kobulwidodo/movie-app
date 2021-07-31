@@ -24,6 +24,7 @@ const MovieList = (props) => {
                             ImagePoster={movie.poster_path}
                             TitlePoster={movie.title ?? movie.name}
                             DatePoster={movie.release_date ?? movie.first_air_date}
+                            isMovie={movie.release_date ? true : false}
                         />
                     </Col>
                 )) : props.moviesList.map((movie) => (
@@ -34,6 +35,7 @@ const MovieList = (props) => {
                             ImagePoster={movie.poster_path}
                             TitlePoster={movie.title ?? movie.name}
                             DatePoster={movie.release_date ?? movie.first_air_date}
+                            isMovie={movie.title ? true : false}
                         />
                     </Col>
                 )) )}
