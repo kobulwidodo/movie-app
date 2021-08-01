@@ -3,6 +3,8 @@
 Movies App is a simple Web App that provides Information about movies, tv show, actor, and much more.\
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Access [here](https://kobulwidodo.github.io/movie-app/)
+
 ## How To Run This Project?
 
 1. Clone the project
