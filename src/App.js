@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import GlobalStyle from './styles/globalStyles';
 import HomePage from './Pages/HomePage';
 import MoviesPage from './Pages/MoviesPage';
@@ -12,7 +12,7 @@ import NotFoundPage from './Pages/NotFoundPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/movie-app">
         <GlobalStyle />
         <ScrollToTop />
         <Switch>
