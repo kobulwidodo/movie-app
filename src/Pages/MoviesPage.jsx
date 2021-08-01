@@ -75,7 +75,10 @@ const MoviesPage = () => {
                         />
                     </Col>
                     <Col md={6}>
-                        <SearchBar onChange={(val) => onChangeBro(val)} />
+                        <SearchBar 
+                            onChange={(val) => onChangeBro(val)} 
+                            disabled={true}
+                        />
                     </Col>
                 </Row>
                 <Row className="mt-5">
@@ -92,6 +95,7 @@ const MoviesPage = () => {
                                 text='Load More'
                                 onClick={() => onClickLoad()}
                                 loading={isLoad}
+                                link="#"
                             />
                         </div>
                     </Row> : null}
