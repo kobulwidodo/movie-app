@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/movie-app/static/css/main.9d7f1da6.chunk.css",
-    "main.js": "/movie-app/static/js/main.4d0499bc.chunk.js",
-    "main.js.map": "/movie-app/static/js/main.4d0499bc.chunk.js.map",
+    "main.js": "/movie-app/static/js/main.d6594748.chunk.js",
+    "main.js.map": "/movie-app/static/js/main.d6594748.chunk.js.map",
     "runtime-main.js": "/movie-app/static/js/runtime-main.4285302b.js",
     "runtime-main.js.map": "/movie-app/static/js/runtime-main.4285302b.js.map",
     "static/css/2.4be38407.chunk.css": "/movie-app/static/css/2.4be38407.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.4be38407.chunk.css",
     "static/js/2.ec8c5bb4.chunk.js",
     "static/css/main.9d7f1da6.chunk.css",
-    "static/js/main.4d0499bc.chunk.js"
+    "static/js/main.d6594748.chunk.js"
   ]
 }
