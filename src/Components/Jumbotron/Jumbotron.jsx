@@ -63,7 +63,9 @@ const Jumbotron = (props) => {
             </Text>
             <SearchWrap>
                 <FormWrap>
-                    <SearchBar />
+                    <SearchBar 
+                        disabled={false}
+                    />
                 </FormWrap>
             </SearchWrap>
         </Jmb>
