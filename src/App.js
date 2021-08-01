@@ -12,7 +12,7 @@ import NotFoundPage from './Pages/NotFoundPage';
 
 function App() {
   return (
-    <Router basename="/movie-app">
+    <Router>
         <GlobalStyle />
         <ScrollToTop />
         <Switch>
