@@ -75,7 +75,7 @@ const TvShowsPage = () => {
                         />
                     </Col>
                     <Col md={6}>
-                        <SearchBar onChange={(val) => onChangeBro(val)} />
+                        <SearchBar onChange={(val) => onChangeBro(val)} disabled={true}/>
                     </Col>
                 </Row>
                 <Row className="mt-5">
@@ -83,6 +83,7 @@ const TvShowsPage = () => {
                         moviesList={moviesList.list}
                         isLimit4={false}
                         loading={loading}
+                        link="#"
                     />
                 </Row>
                 {moviesList.search === "" ?
