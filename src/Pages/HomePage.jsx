@@ -38,7 +38,7 @@ const HomePage = () => {
         }
         fetchData()
     }, [tvArray])
-
+    
     return (
         <>
             <Navigatebar />
