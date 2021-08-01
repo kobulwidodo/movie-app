@@ -2,6 +2,8 @@ import { IconButton, InputBase, makeStyles, Paper } from '@material-ui/core'
 import React from 'react'
 import styled from 'styled-components'
 import SearchIcon from '@material-ui/icons/Search';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const FormControlStyled = styled(InputBase)`
     /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1); */
@@ -37,16 +39,25 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchBar = (props) => {
     const classes = useStyles();
+    const [searchkey, setSearchkey] = useState("")
+    let history = useHistory()
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        history.push(`/search?q=${searchkey}`)
+        setSearchkey("")
+    }
+
     return (
         <>
-            <Paper component="form" className={classes.root}>
+            <Paper component="form" className={classes.root} onSubmit={submitHandler}>
                 <FormControlStyled
                     className={classes.input}
                     placeholder="Search movies, tv show, series, people...."
                     inputProps={{ 'aria-label': 'Search movies, tv show, series, people....' }}
-                    onChange={(e) => props.onChange(e.target.value)}
+                    onChange={props.disabled ? (e) => props.onChange(e.target.value) : (e) => setSearchkey(e.target.value)}
                 />
-                <IconButton type="submit" disabled={true} className={classes.iconButton} aria-label="search">
+                <IconButton type="submit" disabled={props.disabled} className={classes.iconButton} aria-label="search">
                     <SearchIcon />
                 </IconButton>
             </Paper>
