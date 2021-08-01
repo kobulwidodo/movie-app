@@ -21,8 +21,7 @@ function App() {
             <Route path="/tv-shows" exact component={TvShowsPage} />
             <Route path="/:type/:id" exact component={MovieDetailPage} />
             <Route path="/search" exact component={SearchPage} />
-            <Route path='/404' component={NotFoundPage} />
-            <Redirect from='*' to='/404' />
+            <Route path='/person' component={NotFoundPage} />
         </Switch>
     </Router>
   );
