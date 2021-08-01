@@ -1,3 +1,4 @@
+import Skeleton from '@material-ui/lab/Skeleton'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -55,7 +56,11 @@ const MovieDetailPage = () => {
             <Container>
                 <div style={{ fontSize: '24px', textAlign: 'center', marginTop: '30px' }}>Trailer</div>
                 <Row className="mt-4">
-                    {trailerData.filter((n) => n.type === 'Trailer').slice(0, 2).map((n, idx) => (
+                    { loading ? [...Array(2)].map((n, idx) => (
+                        <Col md={6} className="mb-3" key={idx}>
+                            <Skeleton variant="rect" width='100%' height={300} />
+                        </Col>
+                    )) : trailerData.filter((n) => n.type === 'Trailer').slice(0, 2).map((n, idx) => (
                         <Col md={6} className="mb-3" key={idx}>
                             <TrailerCard
                                 url={n.key}
